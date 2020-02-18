@@ -45,27 +45,22 @@ public class Baraja {
 			n++;
 		}
 		do{
-			
+			int x=0;
 			int numero= (int)(Math.random()*40);
 			if (posiciones.contains(numero)==false){
 				posiciones.add(numero);
+				this.carta2[x]=this.carta[numero];
+				x++;
 			}
 		}while (posiciones.size()!=39);
-		System.out.println(posiciones);
-		try{
-			for (int i=0;i<carta.length;i++){
-				this.carta2[i]=this.carta[posiciones.get(i)];
-			}
-		}finally{
-			for (int i=0;i<carta.length;i++){
-				this.carta2[i]=this.carta[posiciones.get(i)];
-			}
-		}
-
+		System.out.println(this.carta2.toString());
 	}
 
 	public String toString() {
 		return "Baraja [posicion=" + posicion + ", carta=" + Arrays.toString(carta) + "]";
+	}
+	public String toString2() {
+		return "Baraja [posicion=" + posicion + ", carta=" + Arrays.toString(carta2) + "]";
 	}
 
 	
