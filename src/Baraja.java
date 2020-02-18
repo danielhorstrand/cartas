@@ -12,6 +12,7 @@ public class Baraja {
 	public Baraja() {
 		super();
 		this.posicion = posicion;
+		this.carta2 = new Carta [40];
 		this.carta = new Carta [40];
 		ArrayList<Integer> posiciones = new ArrayList<Integer>();
 		String barajeado[] = new String[40];
@@ -45,22 +46,24 @@ public class Baraja {
 			n++;
 		}
 		do{
-			int x=0;
 			int numero= (int)(Math.random()*40);
 			if (posiciones.contains(numero)==false){
 				posiciones.add(numero);
-				this.carta2[x]=this.carta[numero];
-				x++;
 			}
+
 		}while (posiciones.size()!=39);
-		System.out.println(this.carta2.toString());
+		System.out.println(posiciones);
+		for (int i=0;i<carta2.length;i++){
+			carta2[i]=carta[i];
+		}
+
 	}
 
 	public String toString() {
-		return "Baraja [posicion=" + posicion + ", carta=" + Arrays.toString(carta) + "]";
+		return "Baraja " + Arrays.toString(carta) + "]";
 	}
 	public String toString2() {
-		return "Baraja [posicion=" + posicion + ", carta=" + Arrays.toString(carta2) + "]";
+		return "Baraja " + Arrays.toString(carta2) + "]";
 	}
 
 	
